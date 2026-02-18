@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CI/CD 배포 테스트 성공</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        h1 { color: #2ecc71; margin-bottom: 10px; }
+        p { color: #34495e; font-size: 1.2rem; }
+        .info {
+            margin-top: 20px;
+            padding: 10px;
+            background: #e8f5e9;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>✅ 자동 배포 성공!</h1>
+        <p>GitHub -> CodePipeline -> CodeDeploy -> EC2 (EFS)</p>
+        <div class="info">
+            배포 시간: <span id="time"></span> (KST)
+        </div>
+        <p>프랑크푸르트(eu-central-1) 리전에서 작동 중</p>
+    </div>
+
+    <script>
+        // 현재 시간을 표시하여 언제 배포된 파일인지 확인
+        const now = new Date();
+        document.getElementById('time').innerText = now.toLocaleString();
+    </script>
+</body>
+</html>
