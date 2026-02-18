@@ -1,0 +1,10 @@
+version: 0.0
+os: linux
+files:
+  - source: /                         # GitHub 저장소의 모든 파일
+    destination: /mnt/efs/html/        # EC2에 마운트된 EFS 경로
+hooks:
+  AfterInstall:
+    - location: scripts/reload-nginx.sh # 파일 복사 후 실행할 스크립트
+      timeout: 60
+      runas: root
