@@ -20,9 +20,20 @@
             padding: 3rem;
             border-radius: 15px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            max-width: 500px; /* 이미지 크기에 맞춰 컨테이너 너비 조절 */
         }
         h1 { color: #2ecc71; margin-bottom: 10px; }
         p { color: #34495e; font-size: 1.2rem; }
+        
+        /* 이미지 스타일 추가 */
+        .bear-img {
+            width: 100%;       /* 컨테이너 너비에 맞춤 */
+            max-width: 300px;  /* 최대 크기 제한 */
+            border-radius: 10px;
+            margin: 20px 0;    /* 위아래 간격 */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
         .info {
             margin-top: 20px;
             padding: 10px;
@@ -36,6 +47,9 @@
     <div class="container">
         <h1>✅ 자동 배포 성공!</h1>
         <p>GitHub -> CodePipeline -> CodeDeploy -> EC2 (EFS)</p>
+        
+        <img src="./불곰.jpg" alt="불곰 이미지" class="bear-img">
+
         <div class="info">
             배포 시간: <span id="time"></span> (KST)
         </div>
@@ -43,7 +57,6 @@
     </div>
 
     <script>
-        // 현재 시간을 표시하여 언제 배포된 파일인지 확인
         const now = new Date();
         document.getElementById('time').innerText = now.toLocaleString();
     </script>
