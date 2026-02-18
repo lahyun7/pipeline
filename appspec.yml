@@ -1,0 +1,10 @@
+version: 0.0
+os: linux
+files:
+  - source: /index.html
+    destination: /usr/share/nginx/html/  # Nginx 루트 또는 EFS 마운트 경로
+hooks:
+  AfterInstall:
+    - location: scripts/reload-nginx.sh
+      timeout: 60
+      runas: root
